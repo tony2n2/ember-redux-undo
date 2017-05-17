@@ -1,7 +1,7 @@
 {
   "name": "ember-redux-undo",
   "version": "0.1.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "redux-undo shim for Ember",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -41,7 +41,9 @@
     "redux-undo": "^1.0.0-beta9-8"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "redux",
+    "redux-undo"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
