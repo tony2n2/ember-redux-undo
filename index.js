@@ -3,13 +3,20 @@
 
 const mergeTrees = require('broccoli-merge-trees')
 const path = require('path')
+const renameFiles = require('broccoli-rename-files');
 
 module.exports = {
-  name: 'ember-redux-undo',
+  name: 'redux-undo',
 
   treeForAddon (tree) {
-    const reduxUndoPath = path.dirname(require.resolve('redux-undo/redux-undo.js'))
-    let reduxUndoTree = this.treeGenerator(reduxUndoPath)
+    const reduxUndoPath = path.dirname(require.resolve('redux-undo/dist/redux-undo.js'))
+    let reduxUndoTree = this.treeGenerator(reduxUndoPath);
+
+    reduxUndoTree = renameFiles(reduxUndoTree, {
+      transformFilename: function(filename, basename, extname) {
+        return filename.replace('redux-undo', 'index');
+      }
+    });
 
     if (!tree) {
       return this._super.treeForAddon.call(this, reduxUndoTree)

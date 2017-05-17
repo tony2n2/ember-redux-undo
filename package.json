@@ -45,7 +45,8 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
-    "broccoli-merge-trees": "^1.1.4"
+    "broccoli-merge-trees": "^1.1.4",
+    "broccoli-rename-files": "^0.0.3"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
